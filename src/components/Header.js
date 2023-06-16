@@ -1,20 +1,16 @@
 import React from "react";
+import Nav from "../components/Nav";
+import logo from "../images/Asset 16@4x.png";
 
-
-
-function Header() {
+const Header = () => {
   return (
     <>
-      <img src={require('./images/logo.png')}alt="logo"></img>
-
-      <meta name="og:title" content="One Place Fishing" />
-      <meta name="og:description" content="some description here" />
-      <meta
-        name="og:image"
-        content="https://example.com/one-place-fishing-store.jpg"
-      />
+      <div className="header">
+        <img src={logo} alt="logo" />
+        <Nav />
+      </div>
     </>
   );
-}
+};
 
 export default Header;

@@ -1,9 +1,18 @@
 import React from "react";
 
-function Nav() {
+const Nav = () => {
+  // const[isActive, setIsActive] = useState(false);
+
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   setIsActive(!isActive);
+  // };
+
+  // const navClass = 'hamburger' + isActive ? 'is-active' : '';
+
   return (
     <>
-      <nav>
+      <nav className="nav">
         <ul>
           <li>
             <a href="/home">Homepage</a>
@@ -18,6 +27,6 @@ function Nav() {
       </nav>
     </>
   );
-}
+};
 
 export default Nav;
