@@ -38,3 +38,67 @@ body {
 .nav {
     padding-right: 1rem;
 }
+.hero {
+    padding: 1rem;
+}
+.hero h1 {
+    color: #F4CE14;
+    font-weight: bold;
+}
+.hero h2 {
+    color: #EDEFEE;
+    font-weight: unset;
+}
+.hero h4 {
+    color: #EDEFEE;
+    font-weight: unset;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.hero button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F4CE14;
+    border: none;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .hero button:hover {
+    background-color: #f4cf14de;
+  }
+  
+  .hero button:active {
+    background-color: #f4cf14b0;
+  }
+.hero2 {
+    background-color: #fff;
+}
+.hero2 h3{
+    padding: 1rem;
+    text-transform: uppercase;
+}
+.dish-sort {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.dish-sort button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0.5rem;
+    background-color: #EDEFEE;
+    border: none;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #495E57;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
