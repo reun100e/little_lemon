@@ -10,7 +10,7 @@ const Home = () => {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </h4>
-        <Link to='/reserve_table'>
+        <Link to='/booking'>
         <button type='button'>Reserve a table</button>
         </Link>
       </div>
