@@ -1,26 +1,18 @@
-import React from "react";
-// import { useState } from "react";
+import { Link } from 'react-router-dom'
 
-const Main = () => {
-  //       const[isActive, setIsActive] = useState(false);
-
-  //   const handleClick = (e) => {
-  //     e.preventDefault();
-  //     setIsActive(!isActive);
-  //   };
-
-  //   const btnClass = 'sort-btn' + isActive ? 'is-active' : '';
-
+const Home = () => {
   return (
     <>
-      <div className="hero">
+    <div className="hero">
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
         <h4>
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </h4>
-        <button>Reserve a table</button>
+        <Link to='/reserve_table'>
+        <button type='button'>Reserve a table</button>
+        </Link>
       </div>
       <div className="hero2">
         <h3>Order for delivery!</h3>
@@ -72,4 +64,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;

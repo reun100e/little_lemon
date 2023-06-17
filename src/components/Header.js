@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/Nav";
+import Navbar from "./Navbar";
 import logo from "../images/Asset 16@4x.png";
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <div className="header">
         <img src={logo} alt="logo" />
-        <Nav />
+        <Navbar />
       </div>
     </>
   );

@@ -21,3 +21,17 @@ code {
   font-family: 'Markazi Text';
   src: url('../src/fonts/MarkaziText.ttf') format('truetype');
 }
+
+nav {
+  background-color: aliceblue;
+  padding: 2rem;
+}
+
+nav a {
+  margin-right: 1rem;
+}
+
+nav a.active {
+  text-decoration: none;
+  font-weight: bold;
+}

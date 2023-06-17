@@ -10,7 +10,7 @@ body {
     background-color: #495E57;
 }
 
- @media only screen and (max-width: 700px) {
+ @media only screen and (max-width: 1000px) {
 
     .nav ul{
         list-style: none;
@@ -180,7 +180,7 @@ body {
 
 /* ------------------------------Desktop view---------------------- */
 
-@media only screen and (min-width: 701px) {
+@media only screen and (min-width: 1001px) {
 .nav ul{
     list-style: none;
     display: flex;
