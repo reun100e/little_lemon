@@ -1,11 +1,10 @@
 import React from "react";
+import BookingForm from "./BookingForm";
 
 const Table = () => {
   return (
     <>
-      <h6>
-        This is the reserve a table page..
-      </h6>
+      <BookingForm />
     </>
   );
 };

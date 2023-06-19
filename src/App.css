@@ -227,6 +227,12 @@ body {
     transform: translate(0, -1.3rem);
     font-size: 40px;
 }
+.hero input {
+    color: #EDEFEE;
+    font-weight: normal;
+    font-size: 18px;
+    padding-bottom: 1rem;
+}
 .hero h4 {
     color: #EDEFEE;
     font-weight: normal;
