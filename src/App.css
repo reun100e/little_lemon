@@ -6,6 +6,66 @@ body {
     background-color: #EDEFEE;
     font-family: 'Karla', sans-serif;
 }
+form {
+    background-color: #495E57;
+    padding: 1rem;
+    color: #EDEFEE;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.DnT {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+  }
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F4CE14;
+    border: none;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+button:hover {
+    background-color: #f4cf14de;
+  }
+button:active {
+    background-color: #f4cf14b0;
+  }
+h3 {
+    padding-top: 1rem;
+    color: #EDEFEE;
+    font-weight: normal;
+    font-size: 25px;
+}
 .hero {
     background-color: #495E57;
 }
@@ -61,29 +121,9 @@ body {
     font-weight: normal;
     font-size: 18px;
     padding-bottom: 1rem;
-    padding-right: 15rem;
+    padding-right: 1rem;
 }
-.hero button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #F4CE14;
-    border: none;
-    border-radius: 16px;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-  }
-  .hero button:hover {
-    background-color: #f4cf14de;
-  }
-  .hero button:active {
-    background-color: #f4cf14b0;
-  }
+
 .hero2 {
     background-color: #fff;
     font-weight: bold;
@@ -357,5 +397,9 @@ body {
     padding: 10px 0;
     color: #495E57;
     background-color: #EDEFEE;
+}
+form {
+    align-content: center;
+    flex-wrap: wrap;
 }
 }
