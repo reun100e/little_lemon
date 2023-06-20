@@ -1,21 +1,14 @@
-import { Link } from "react-router-dom";
+import React from 'react';
 
-const Home = () => {
+const Hero = () => {
   return (
-    <>
-      <div className="hero">
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
-        <h4>
-          We are a family owned Mediterranean restaurant, focused on traditional
-          recipes served with a modern twist.
-        </h4>
-        <Link to="/booking">
-          <button type="button">Reserve a table</button>
-        </Link>
-      </div>
-    </>
+    <section className='hero'>
+      <h1>Little Lemon</h1>
+      <h2>Chicago</h2>
+      <h4>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</h4>
+      <a className='btn' href="/booking">Make a Reservation</a>
+    </section>
   );
 };
 
-export default Home;
+export default Hero;

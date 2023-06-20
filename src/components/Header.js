@@ -1,15 +1,15 @@
-import React from "react";
-import Navbar from "./Navbar";
-import logo from "../images/Asset 16@4x.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <>
-      <div className="header">
-        <img src={logo} alt="logo" />
-        <Navbar />
-      </div>
-    </>
+    <header>
+        {/* {Add logo} */}
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+    </header>
   );
 };
 

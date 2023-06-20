@@ -11,27 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-@font-face {
-  font-family: 'Karla';
-  src: url('../src/fonts/Karla.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Markazi Text';
-  src: url('../src/fonts/MarkaziText.ttf') format('truetype');
-}
-
-nav {
-  background-color: aliceblue;
-  padding: 2rem;
-}
-
-nav a {
-  margin-right: 1rem;
-}
-
-nav a.active {
-  text-decoration: none;
-  font-weight: bold;
-}
