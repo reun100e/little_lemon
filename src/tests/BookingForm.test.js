@@ -1,18 +1,28 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
 
 describe("BookingForm", () => {
-  test("renders form inputs", () => {
-    render(<BookingForm />);
-    const dateInput = screen.getByLabelText(/date/i);
-    const timeInput = screen.getByLabelText(/time/i);
-    const numberOfDinnersInput = screen.getByLabelText(/number of dinners/i);
-    const occasionInput = screen.getByLabelText(/occasion/i);
+  test("should update form values correctly", () => {
+    const { getByLabelText } = render(
+      <MemoryRouter>
+        <BookingForm />
+      </MemoryRouter>
+    );
 
-    expect(dateInput).toBeInTheDocument();
-    expect(timeInput).toBeInTheDocument();
-    expect(numberOfDinnersInput).toBeInTheDocument();
-    expect(occasionInput).toBeInTheDocument();
+    const dateInput = getByLabelText("Date:");
+    const numberOfDinnersInput = getByLabelText("Number of Dinners:");
+    const occasionSelect = getByLabelText("Occasion:");
+
+    fireEvent.change(dateInput, { target: { value: "2023-06-21" } });
+    fireEvent.change(numberOfDinnersInput, { target: { value: "4" } });
+    fireEvent.change(occasionSelect, { target: { value: "Birthday" } });
+
+    expect(dateInput.value).toBe("2023-06-21");
+    expect(numberOfDinnersInput.value).toBe("4");
+    expect(occasionSelect.value).toBe("Birthday");
   });
+
+
 });

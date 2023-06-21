@@ -1,3 +1,6 @@
+// Downloaded the JavaScript file instead of putting it in index.html to avoid browser issues.
+// <script src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js"></script>
+
 export const seededRandom = function (seed) {
   var m = 2 ** 35 - 31;
   var a = 185852;

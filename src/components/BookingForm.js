@@ -1,13 +1,13 @@
-// BookingForm.js
 import React, { useState } from "react";
-import {fetchAPI, submitAPI} from "./Api";
+import { fetchAPI, submitAPI } from "./api";
+import { useNavigate } from "react-router-dom";
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes = [], dispatch }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [numberOfDinners, setNumberOfDinners] = useState("");
   const [occasion, setOccasion] = useState("");
-
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     };
     const isSubmitted = await submitAPI(formData);
     if (isSubmitted) {
-      console.log("Form submitted successfully");
+      navigate("/confirmed"); // Navigate to the booking confirmed page
     } else {
       console.log("Error submitting form");
     }
@@ -58,11 +58,11 @@ const BookingForm = ({ availableTimes, dispatch }) => {
       </label>
       <label>
         Occasion:
-        <input
-          type="text"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-        />
+        <select value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+          <option>Anniversary</option>
+          <option>Birthday</option>
+          <option>Business</option>
+        </select>
       </label>
       <button type="submit">Submit</button>
     </form>

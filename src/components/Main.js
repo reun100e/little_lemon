@@ -1,9 +1,10 @@
 import React, { useReducer, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import BookingForm from "./BookingForm";
-import {fetchAPI} from "./Api";
+import ConfirmedBooking from "./ConfirmedBooking";
+import { fetchAPI, submitAPI } from "./api";
 
 // Reducer function to handle state changes
 const timesReducer = (state, action) => {
@@ -17,17 +18,7 @@ const timesReducer = (state, action) => {
 
 const Main = () => {
   const [availableTimes, dispatch] = useReducer(timesReducer, []);
-
-  useEffect(() => {
-    const initializeTimes = async () => {
-      const today = new Date();
-      const formattedDate = today.toISOString().split("T")[0];
-      const times = await fetchAPI(formattedDate);
-      dispatch({ type: "UPDATE_TIMES", payload: times });
-    };
-
-    initializeTimes();
-  }, []);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initializeTimes = async () => {
@@ -40,6 +31,15 @@ const Main = () => {
     initializeTimes(); // Fetch the available times on component mount
   }, []);
 
+  const submitForm = async (formData) => {
+    const isSubmitted = await submitAPI(formData);
+    if (isSubmitted) {
+      navigate("/confirmed"); // Navigates to the booking confirmed page
+    } else {
+      console.log("Error submitting form");
+    }
+  };
+
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
@@ -47,9 +47,14 @@ const Main = () => {
       <Route
         path="/booking"
         element={
-          <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+          <BookingForm
+            availableTimes={availableTimes}
+            dispatch={dispatch}
+            submitForm={submitForm} // Pass the submitForm function
+          />
         }
       />
+      <Route path="/confirmed" element={<ConfirmedBooking />} />
     </Routes>
   );
 };
