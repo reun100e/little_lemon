@@ -1,4 +1,3 @@
-
 export const seededRandom = function (seed) {
   var m = 2 ** 35 - 31;
   var a = 185852;
@@ -31,7 +30,6 @@ export const fetchAPI = async function (date) {
     throw error;
   }
 };
-
 
 export const submitAPI = async function (formData) {
   try {
