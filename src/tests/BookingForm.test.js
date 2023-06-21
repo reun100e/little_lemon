@@ -24,5 +24,33 @@ describe("BookingForm", () => {
     expect(occasionSelect.value).toBe("Birthday");
   });
 
+  it("validates HTML5 validation and attributes", () => {
+    const { getByLabelText, getByText } = render(
+      <MemoryRouter>
+        <BookingForm />
+      </MemoryRouter>
+    );
+
+    // Get form elements
+    const dateInput = getByLabelText("Date:");
+    const timeInput = getByLabelText("Time:");
+    const numberOfDinnersInput = getByLabelText("Number of Dinners:");
+    const occasionInput = getByLabelText("Occasion:");
+    const submitButton = getByText("Submit");
+
+    // Check HTML5 validation attributes
+    expect(dateInput.required).toBe(true);
+    expect(timeInput.required).toBe(true);
+    expect(numberOfDinnersInput.required).toBe(true);
+    expect(occasionInput.required).toBe(true);
+
+    // Test validation messages
+    fireEvent.submit(submitButton);
+    expect(getByText("Please select a date")).toBeInTheDocument();
+    expect(getByText("Please select a time")).toBeInTheDocument();
+    expect(getByText("Please enter the number of dinners")).toBeInTheDocument();
+    expect(getByText("Please select an occasion")).toBeInTheDocument();
+  });
+
 
 });
