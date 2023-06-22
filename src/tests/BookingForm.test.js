@@ -11,9 +11,9 @@ describe("BookingForm", () => {
       </MemoryRouter>
     );
 
-    const dateInput = getByLabelText("Date:");
-    const numberOfDinnersInput = getByLabelText("Number of Dinners:");
-    const occasionSelect = getByLabelText("Occasion:");
+    const dateInput = getByLabelText("Date");
+    const numberOfDinnersInput = getByLabelText("Number of Dinners");
+    const occasionSelect = getByLabelText("Occasion");
 
     fireEvent.change(dateInput, { target: { value: "2023-06-21" } });
     fireEvent.change(numberOfDinnersInput, { target: { value: "4" } });
@@ -32,11 +32,11 @@ describe("BookingForm", () => {
     );
 
     // Get form elements
-    const dateInput = getByLabelText("Date:");
-    const timeInput = getByLabelText("Time:");
-    const numberOfDinnersInput = getByLabelText("Number of Dinners:");
-    const occasionInput = getByLabelText("Occasion:");
-    const submitButton = getByText("Submit");
+    const dateInput = getByLabelText("Date");
+    const timeInput = getByLabelText("Time");
+    const numberOfDinnersInput = getByLabelText("Number of Dinners");
+    const occasionInput = getByLabelText("Occasion");
+    const submitButton = getByText("Book now");
 
     // Check HTML5 validation attributes
     expect(dateInput.required).toBe(true);

@@ -62,10 +62,6 @@ const BookingForm = ({ availableTimes = [], dispatch }) => {
     dispatch({ type: "UPDATE_TIMES", payload: times });
   };
 
-  const handleGoHome = () => {
-    navigate("/");
-  };
-
   return (
     <>
       <div className="hero">
@@ -75,7 +71,7 @@ const BookingForm = ({ availableTimes = [], dispatch }) => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="date">
-            Date:
+            Date
             <input
               type="date"
               id="date"
@@ -91,7 +87,7 @@ const BookingForm = ({ availableTimes = [], dispatch }) => {
         </div>
         <div className="form-group">
           <label htmlFor="time">
-            Time:
+            Time
             <select
               id="time"
               value={time}
@@ -113,7 +109,7 @@ const BookingForm = ({ availableTimes = [], dispatch }) => {
         </div>
         <div className="form-group">
           <label htmlFor="numberOfDinners">
-            Number of Dinners:
+            Number of Dinners
             <input
               type="number"
               id="numberOfDinners"
@@ -131,7 +127,7 @@ const BookingForm = ({ availableTimes = [], dispatch }) => {
         </div>
         <div className="form-group">
           <label htmlFor="occasion">
-            Occasion:
+            Occasion
             <select
               id="occasion"
               value={occasion}
