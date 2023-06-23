@@ -49,6 +49,7 @@ label, input, option, select {
 
 label {
   font-weight: bold;
+  letter-spacing: 0.1rem;
 }
 
 input, select {
