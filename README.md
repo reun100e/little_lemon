@@ -6,6 +6,6 @@ This is my capstone project in Meta Front-End Developer Professional Certificate
 
 ## How to use
 
-### npm install
+#### npm install
 
 See it in action at https://little-lemon-online.netlify.app (webaite partially setup, pls download and run the build or clone)
