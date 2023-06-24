@@ -6,4 +6,6 @@ This is my capstone project in Meta Front-End Developer Professional Certificate
 
 ## How to use
 ### Go to the root directory and run the command
-##### npm install
+```
+npm install
+```
