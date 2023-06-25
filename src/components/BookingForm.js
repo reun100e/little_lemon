@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fetchAPI, submitAPI } from "./api";
+import { fetchAPI, submitAPI } from "../components/api";
 import { useNavigate } from "react-router-dom";
 import logo from "../images/Asset 9@4x.png";
 

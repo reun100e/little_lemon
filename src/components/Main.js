@@ -4,7 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import BookingForm from "./BookingForm";
 import ConfirmedBooking from "./ConfirmedBooking";
-import { fetchAPI, submitAPI } from "./api";
+import { fetchAPI, submitAPI } from "../components/api";
 
 // Reducer function to handle state changes
 const timesReducer = (state, action) => {
