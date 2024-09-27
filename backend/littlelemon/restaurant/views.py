@@ -23,13 +23,9 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
 
-class BookingView(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def get(self, request):
-        items = Booking.objects.all()
-        serializer = BookingSerializer(items, many=True)
-        return Response(serializer.data)
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 
 
 class MenuItemsView(generics.ListCreateAPIView):

@@ -21,13 +21,17 @@ from restaurant import views
 
 from rest_framework import routers
 
-router = routers.DefaultRouter()
-router.register(r"users", views.UserViewSet)
+router1 = routers.DefaultRouter()
+router1.register(r"users", views.UserViewSet)
+
+router2 = routers.DefaultRouter()
+router2.register(r"tables", views.BookingViewSet)
 
 urlpatterns = [
     # path("", views.index, name="index"),
-    path("", include(router.urls)),
+    path("", include(router1.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("admin/", admin.site.urls),
     path("api/", include("restaurant.urls")),
+    path("restaurant/booking/", include(router2.urls)),
 ]
