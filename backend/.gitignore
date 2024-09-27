@@ -1,1 +1,18 @@
+# conf files
 db.cnf
+
+# Python
+__pycache__/
+*.py[cod]
+*.env
+*.sqlite3
+
+# Django
+/static/
+/media/
+*.log
+*.pot
+*.pyc
+*.mo
+*.pyo
+*.db
