@@ -1,4 +1,4 @@
-# Back-end API | Little Lemon Capstone project
+# Little Lemon Capstone project
 
 This repo contains the capstone projects in Meta Front-end and Back-End Developer Professional Certificate course
 https://www.coursera.org/learn/back-end-developer-capstone
