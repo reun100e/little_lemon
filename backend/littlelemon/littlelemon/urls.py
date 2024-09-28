@@ -22,10 +22,10 @@ from restaurant import views
 from rest_framework import routers
 
 router1 = routers.DefaultRouter()
-router1.register(r"users", views.UserViewSet)
+router1.register(r"users", views.UserViewSet, basename="user")
 
 router2 = routers.DefaultRouter()
-router2.register(r"tables", views.BookingViewSet)
+router2.register(r"tables", views.BookingViewSet, basename="booking")
 
 urlpatterns = [
     # path("", views.index, name="index"),

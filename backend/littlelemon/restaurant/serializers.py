@@ -19,4 +19,5 @@ class MenuItemSerializer(serializers.ModelSerializer):
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        fields = "__all__"
+        fields = ["id", "name", "no_of_guests", "booking_date", "user"]
+        read_only_fields = ["user"]  # Ensure the user is not provided by the request

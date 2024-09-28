@@ -1,7 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
-# Menu model
 class MenuItem(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
@@ -9,15 +9,17 @@ class MenuItem(models.Model):
     inventory = models.IntegerField()
 
     def __str__(self):
-        return f'{self.title} : {str(self.price)}'
+        return f"{self.title} : {str(self.price)}"
 
 
-# Booking model
 class Booking(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     no_of_guests = models.IntegerField()
     booking_date = models.DateTimeField()
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="bookings"
+    )  # Link to the user who made the booking
 
     def __str__(self):
         return f"Booking by {self.name} for {self.no_of_guests} guests on {self.booking_date}"
