@@ -5,7 +5,7 @@ Front-end web app of a restaurant with Table Reservation/Booking Form.
 This (v1) is my capstone project in Meta Front-End Developer Professional Certificate course https://www.coursera.org/learn/meta-front-end-developer-capstone
 
 See the v1 website in action: https://little-lemon-online.netlify.app
-*NOTE: Back-end API not connected yet
+**NOTE: Back-end API not connected yet**
 <p align="center">
     <img width="300" src="https://i.imgur.com/VrBhPIq.png" alt="v1 website screenshot">
 </p>

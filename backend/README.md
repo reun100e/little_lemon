@@ -20,7 +20,7 @@ This is my capstone project in Meta Back-End Developer Professional Certificate 
 - admin/
 
 
-*APIs not yet connected to the front-end shown below
+**APIs not yet connected to the front-end shown below**
 <p align="center">
     <img width="300" src="https://i.imgur.com/VrBhPIq.png" alt="v1 website screenshot">
 </p>
