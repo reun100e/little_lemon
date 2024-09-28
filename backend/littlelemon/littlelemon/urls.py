@@ -34,4 +34,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("restaurant.urls")),
     path("restaurant/booking/", include(router2.urls)),
+    # Djoser url paths
+    path("auth/", include("djoser.urls")),
+    path("auth/", include("djoser.urls.authtoken")),
 ]
