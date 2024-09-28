@@ -1,13 +1,12 @@
 from django.shortcuts import render
-
 from rest_framework import viewsets, generics
-from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.contrib.auth.models import User
-
 from .models import Booking, MenuItem
 from .serializers import BookingSerializer, MenuItemSerializer, UserSerializer
+import logging
 
-# Create your views here.
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -25,35 +24,22 @@ class BookingViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]  # Only authenticated users can access
 
     def get_queryset(self):
-        """
-        Admins can see all bookings.
-        Logged-in users can see only their own bookings.
-        """
         user = self.request.user
-        if user.is_staff:  # Admin user
-            return Booking.objects.all()  # Admin can view all bookings
-        else:
-            return Booking.objects.filter(
-                user=user
-            )  # Regular user can only see their own bookings
+        logger.debug(f"User: {user.username} - Is staff: {user.is_staff}")
 
-    def get_permissions(self):
-        """
-        Customize permissions:
-        - Only logged-in users can book tables (POST).
-        - Admins can view all tables (GET).
-        - Other users can only view their own bookings (GET).
-        """
-        if self.request.method == "GET":
-            return [IsAuthenticated()]  # Allow logged-in users to view their bookings
-        elif self.request.method == "POST":
-            return [IsAuthenticated()]  # Allow any logged-in user to book a table
-        return super().get_permissions()
+        if user.is_staff:  # Admin user
+            logger.debug("Admin user accessing all bookings.")
+            return Booking.objects.all()  # Admin can view all bookings
+
+        # Regular user can only see their own bookings
+        user_bookings = Booking.objects.filter(user=user)
+        logger.debug(
+            f"Regular user accessing their bookings: {user_bookings.count()} found."
+        )
+        return user_bookings
 
     def perform_create(self, serializer):
-        """
-        Automatically assign the logged-in user as the 'user' of the booking.
-        """
+        """Automatically assign the logged-in user as the 'user' of the booking."""
         serializer.save(user=self.request.user)
 
 
@@ -63,10 +49,8 @@ class MenuItemsView(generics.ListCreateAPIView):
 
     def get_permissions(self):
         if self.request.method == "GET":
-            return [AllowAny()]
-        elif self.request.method == "POST":
-            return [IsAuthenticated()]
-        return super().get_permissions()
+            return [AllowAny()]  # Allow anyone to access the list of menu items
+        return [IsAuthenticated()]  # Require authentication for creating menu items
 
 
 class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
@@ -75,5 +59,5 @@ class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_permissions(self):
         if self.request.method == "GET":
-            return [AllowAny()]
-        return [IsAuthenticated()]
+            return [AllowAny()]  # Allow anyone to access a single menu item
+        return [IsAuthenticated()]  # Require authentication for updates or deletions
