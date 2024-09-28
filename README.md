@@ -9,3 +9,7 @@ The back-end is in Django.
 
 The front-end and back-end API are not connect at the moment. Please read README.md files in frontend and backend folders for more information regarding each.
 
+*API not yet connected to the front-end shown below
+<p align="center">
+    <img width="300" src="https://i.imgur.com/VrBhPIq.png" alt="v1 website screenshot">
+</p>
